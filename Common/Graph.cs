@@ -20,7 +20,7 @@ namespace Common
             }
         }
 
-        internal Graph(double?[,] edgeMatrix)
+        public Graph(double?[,] edgeMatrix)
         {
             Edges = new HashSet<Edge>();
             for (int i = 0; i < edgeMatrix.GetLength(0); ++i)
