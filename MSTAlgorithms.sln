@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kruskal", "Kruskal\Kruskal.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{2A2F34FF-9C64-45AB-807D-0B42DD99A171}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{F5516480-2840-428F-B02E-6F8FAD19D58E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{2A2F34FF-9C64-45AB-807D-0B42DD99A171}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A2F34FF-9C64-45AB-807D-0B42DD99A171}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A2F34FF-9C64-45AB-807D-0B42DD99A171}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5516480-2840-428F-B02E-6F8FAD19D58E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5516480-2840-428F-B02E-6F8FAD19D58E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5516480-2840-428F-B02E-6F8FAD19D58E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5516480-2840-428F-B02E-6F8FAD19D58E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
