@@ -8,6 +8,7 @@
       <Project>{3645913D-A637-4D19-8436-7EDC97F80E34}</Project>
       <Name>Boruvka</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\Kruskal\Kruskal.csproj">
       <Project>{91EC21D5-CF95-411A-AE8E-BDEBDA01A8A0}</Project>
       <Name>Kruskal</Name>
