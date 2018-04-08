@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{239B48BE-2607-4CD3-B35E-43A9B1E41EEF}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>MST</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Extensions\DisjointSet.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Extensions\GraphGenerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Structs\Edge.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Structs\Graph.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\Structs\Vertex.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MST\BoruvkaMST.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MST\KruskalMST.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Common\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Common\Structs\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Common\Extensions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)MST\" />
+  </ItemGroup>
+</Project>
