@@ -5,7 +5,7 @@ namespace MST
 	/// <summary>
 	/// This class represents an Edge.
 	/// </summary>
-	public class Edge
+	public class Edge : IComparable<Edge>
 	{
 		#region properties
 
@@ -37,11 +37,16 @@ namespace MST
 		/// <param name="u">First vertex.</param>
 		/// <param name="v">Second vertex.</param>
 		/// <param name="w">Weight of the edge.</param>
-		public Edge (int u, int v, int w)
+		public Edge (Vertex u, Vertex v, int w)
 		{
-			U = v;
+			U = u;
 			V = v;
 			W = w;
+		}
+
+		public int CompareTo(Edge other)
+		{
+			return W.CompareTo (other.W);
 		}
 
 		#endregion
