@@ -8,15 +8,6 @@ namespace MST
 	/// </summary>
 	public class Vertex
 	{
-		#region fields
-
-		/// <summary>
-		/// The identifier.
-		/// </summary>
-		private int _id;
-
-		#endregion
-
 		#region properties
 
 		/// <summary>
@@ -31,6 +22,11 @@ namespace MST
 		/// <value>The parent.</value>
 		public Vertex Parent { get; set; }
 
+		/// <summary>
+		/// The identifier.
+		/// </summary>
+		public int ID { get; }
+
 		#endregion
 
 		#region methods
@@ -41,19 +37,19 @@ namespace MST
 		/// <param name="id">Identifier.</param>
 		public Vertex (int id)
 		{
-			_id = id;
+			ID = id;
 			Rank = 0;
 			Parent = this;
 		}
 
 		public static bool operator ==(Vertex v1, Vertex v2)
 		{
-			return v1._id == v2._id;
+			return v1.ID == v2.ID;
 		}
 
 		public static bool operator !=(Vertex v1, Vertex v2)
 		{
-			return v1._id != v2._id;
+			return v1.ID != v2.ID;
 		}
 
 		public override bool Equals(object obj)
@@ -64,7 +60,7 @@ namespace MST
 			}
 
 			Vertex v = (Vertex)obj;
-			return _id.Equals (v._id);
+			return ID.Equals (v.ID);
 		}
 
 		public override int GetHashCode()
