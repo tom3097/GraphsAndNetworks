@@ -41,9 +41,35 @@ namespace MST
 		/// <param name="id">Identifier.</param>
 		public Vertex (int id)
 		{
-			id = id;
+			_id = id;
 			Rank = 0;
 			Parent = this;
+		}
+
+		public static bool operator ==(Vertex v1, Vertex v2)
+		{
+			return v1._id == v2._id;
+		}
+
+		public static bool operator !=(Vertex v1, Vertex v2)
+		{
+			return v1._id != v2._id;
+		}
+
+		public override bool Equals(object obj)
+		{
+			if (obj == null || GetType () != obj.GetType ())
+			{
+				return false;
+			}
+
+			Vertex v = (Vertex)obj;
+			return _id.Equals (v._id);
+		}
+
+		public override int GetHashCode()
+		{
+			return base.GetHashCode ();
 		}
 
 		#endregion

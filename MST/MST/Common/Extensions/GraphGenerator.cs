@@ -27,6 +27,11 @@ namespace MST
 			// FIXME: missing implementation
 		}
 
+		private static void CreateConnectedGraph(int vertexNo)
+		{
+
+		}
+
 		#endregion
 	}
 }

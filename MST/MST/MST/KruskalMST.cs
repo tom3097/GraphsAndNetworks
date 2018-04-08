@@ -11,11 +11,10 @@ namespace MST
 		/// Finds the MST using Kruskal algorithm.
 		/// </summary>
 		/// <param name="g">The graph.</param>
-		public static void FindMST(Graph g)
+		public static Edge[] FindMST(Graph g)
 		{
-			// FIXME: missing implementation
-
 			Edge[] mst = new Edge[g.V.Length - 1];
+			int mstIdx = 0;
 
 			foreach (var v in g.V)
 			{
@@ -26,9 +25,14 @@ namespace MST
 
 			foreach (var e in g.E)
 			{
-				Console.WriteLine ("dfdf");
+				if (e.U.FindSet () != e.V.FindSet ())
+				{
+					mst [mstIdx++] = e;
+					e.U.Union (e.V);
+				}
 			}
+
+			return mst;
 		}
 	}
 }
-
