@@ -5,6 +5,7 @@ namespace MST
 	/// <summary>
 	/// This class represents an Edge.
 	/// </summary>
+	[Serializable]
 	public class Edge : IComparable<Edge>
 	{
 		#region properties
@@ -44,9 +45,28 @@ namespace MST
 			W = w;
 		}
 
+		/// <Docs>To be added.</Docs>
+		/// <para>Returns the sort order of the current instance compared to
+		/// the specified object.</para>
+		/// <summary>
+		/// Compares to.
+		/// </summary>
+		/// <returns>The to.</returns>
+		/// <param name="other">Other.</param>
 		public int CompareTo(Edge other)
 		{
 			return W.CompareTo (other.W);
+		}
+
+		/// <summary>
+		/// Returns a <see cref="System.String"/> that represents the
+		/// current <see cref="MST.Edge"/>.
+		/// </summary>
+		/// <returns>A <see cref="System.String"/> that represents the
+		/// current <see cref="MST.Edge"/>.</returns>
+		public override string ToString ()
+		{
+			return string.Format ("[Edge: U={0}, V={1}, W={2}]", U.Id, V.Id, W);
 		}
 
 		#endregion

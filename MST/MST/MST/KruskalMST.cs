@@ -5,8 +5,10 @@ namespace MST
 	/// <summary>
 	/// This class implements Kruskal MST algorithm.
 	/// </summary>
-	public class KruskalMST
+	static class KruskalMST
 	{
+		#region methods
+
 		/// <summary>
 		/// Finds the MST using Kruskal algorithm.
 		/// </summary>
@@ -34,5 +36,7 @@ namespace MST
 
 			return mst;
 		}
+
+		#endregion
 	}
 }

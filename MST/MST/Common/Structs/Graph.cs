@@ -5,6 +5,7 @@ namespace MST
 	/// <summary>
 	/// This class represents a graph.
 	/// </summary>
+	[Serializable]
 	public class Graph
 	{
 		#region properties

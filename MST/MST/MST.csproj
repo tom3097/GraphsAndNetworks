@@ -45,5 +45,6 @@
     <Compile Include="MST\BoruvkaMST.cs" />
     <Compile Include="MST\KruskalMST.cs" />
     <Compile Include="Run.cs" />
+    <Compile Include="Common\Extensions\Shared.cs" />
   </ItemGroup>
 </Project>

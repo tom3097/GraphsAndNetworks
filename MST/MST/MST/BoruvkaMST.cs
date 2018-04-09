@@ -3,8 +3,10 @@
 	/// <summary>
 	/// This class implements Boruvka MST algorithm.
 	/// </summary>
-	public class BoruvkaMST
+	static class BoruvkaMST
 	{
+		#region methods
+
 		/// <summary>
 		/// Finds the MST using Boruvka algorithm.
 		/// </summary>
@@ -13,29 +15,30 @@
 		{
 			Edge[] mst = new Edge[g.V.Length - 1];
 			Edge[] cheapestEdges = new Edge[g.V.Length];
+
 			foreach (var v in g.V)
 			{
 				v.MakeSet();
 			}
 
-			int numSets = g.V.Length;
-			while (numSets > 1)
+			int setsNo = g.V.Length;
+			while (setsNo > 1)
 			{
-				foreach (Edge edge in g.E)
+				foreach (var e in g.E)
 				{
-					var uRoot = edge.U.FindSet();
-					var vRoot = edge.V.FindSet();
+					var uRoot = e.U.FindSet();
+					var vRoot = e.V.FindSet();
 
 					if (uRoot != vRoot)
 					{
-						if (cheapestEdges[uRoot.ID] == null || cheapestEdges[uRoot.ID].W > edge.W)
+						if (cheapestEdges[uRoot.Id] == null || cheapestEdges[uRoot.Id].W > e.W)
 						{
-							cheapestEdges[uRoot.ID] = edge;
+							cheapestEdges[uRoot.Id] = e;
 						}
 
-						if (cheapestEdges[vRoot.ID] == null || cheapestEdges[vRoot.ID].W > edge.W)
+						if (cheapestEdges[vRoot.Id] == null || cheapestEdges[vRoot.Id].W > e.W)
 						{
-							cheapestEdges[vRoot.ID] = edge;
+							cheapestEdges[vRoot.Id] = e;
 						}
 					}
 				}
@@ -44,14 +47,12 @@
 				{
 					if (cheapestEdges[i] != null)
 					{
-						var uRoot = cheapestEdges[i].U.FindSet();
-						var vRoot = cheapestEdges[i].V.FindSet();
+						var e = cheapestEdges [i];
 
-						if (uRoot != vRoot)
+						if (e.U.FindSet() != e.V.FindSet())
 						{
-							uRoot.Union(vRoot);
-							--numSets;
-							mst[numSets - 1] = cheapestEdges[i];
+							mst[--setsNo - 1] = cheapestEdges[i];
+							e.U.Union(e.V);
 						}   
 						cheapestEdges[i] = null;
 					}
@@ -60,5 +61,7 @@
 
 			return mst;
 		}
+
+		#endregion
 	}
 }
