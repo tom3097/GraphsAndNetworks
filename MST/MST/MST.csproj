@@ -37,6 +37,7 @@
     <Compile Include="Common\Structs\Edge.cs" />
     <Compile Include="Common\Structs\Graph.cs" />
     <Compile Include="Common\Structs\Vertex.cs" />
+    <Compile Include="Evaluator.cs" />
     <Compile Include="MST\BoruvkaMST.cs" />
     <Compile Include="MST\KruskalMST.cs" />
     <Compile Include="Run.cs" />
