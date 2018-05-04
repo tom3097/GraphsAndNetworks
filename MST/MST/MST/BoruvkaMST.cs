@@ -51,7 +51,7 @@
 
 						if (e.U.FindSet() != e.V.FindSet())
 						{
-							mst[--setsNo - 1] = cheapestEdges[i];
+							mst[--setsNo - 1] = e;
 							e.U.Union(e.V);
 						}   
 						cheapestEdges[i] = null;

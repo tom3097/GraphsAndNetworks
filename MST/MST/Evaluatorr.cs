@@ -3,11 +3,11 @@ using System.Linq;
 
 namespace MST
 {
-	public class Evaluator
+	public class Evaluatorr
 	{
 		private readonly int _runs;
 
-		public Evaluator (int runs)
+		public Evaluatorr (int runs)
 		{
 			_runs = runs;
 		}
@@ -31,7 +31,7 @@ namespace MST
 			{
 				var graph = new Graph ();
 				generationMethod (graph, graphSize);
-				var graphCopy = graph.DeepClone ();
+				var graphCopy = (Graph)graph.Clone ();
 
 				var startBoruvka = DateTime.Now;
 				BoruvkaMST.FindMST (graph);

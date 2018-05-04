@@ -1,12 +1,9 @@
-﻿using System;
-
-namespace MST
+﻿namespace MST
 {
 	/// <summary>
 	/// This class represents a vertex. It also contains some additional
 	/// information which allows to implement disjoint set operations.
 	/// </summary>
-	[Serializable]
 	public class Vertex
 	{
 		#region properties

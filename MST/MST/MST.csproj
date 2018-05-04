@@ -37,19 +37,34 @@
     <Compile Include="Common\Structs\Edge.cs" />
     <Compile Include="Common\Structs\Graph.cs" />
     <Compile Include="Common\Structs\Vertex.cs" />
-    <Compile Include="Evaluator.cs" />
     <Compile Include="MST\BoruvkaMST.cs" />
     <Compile Include="MST\KruskalMST.cs" />
     <Compile Include="Run.cs" />
-    <Compile Include="Common\Extensions\Shared.cs" />
+    <Compile Include="Evaluation\Evaluator.cs" />
+    <Compile Include="Evaluation\EvalResult.cs" />
+    <Compile Include="Tests\DummyCorrectTests.cs" />
+    <Compile Include="Tests\WeightedEdge.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="QuickGraph, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\QuickGraphCore.1.0.0\lib\net40\QuickGraph.dll</HintPath>
-    </Reference>
     <Reference Include="System.Numerics" />
+    <Reference Include="QuickGraph">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Serialization">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Data">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph.Graphviz">
+      <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.Graphviz.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Evaluation\" />
+    <Folder Include="Tests\" />
   </ItemGroup>
 </Project>

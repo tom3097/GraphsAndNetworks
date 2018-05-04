@@ -5,7 +5,6 @@ namespace MST
 	/// <summary>
 	/// This class represents an Edge.
 	/// </summary>
-	[Serializable]
 	public class Edge : IComparable<Edge>
 	{
 		#region properties
