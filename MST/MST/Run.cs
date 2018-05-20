@@ -18,10 +18,10 @@ public class Run
 			for (int i = 0; i < dummyTestsNo; ++i)
 			{
 				Graph sparseGraph = new Graph ();
-				sparseGraph.GenerateSparse (100);
+				sparseGraph.GenerateSparse (1000);
 
 				Graph denseGraph = new Graph ();
-				denseGraph.GenerateDense (100);
+				denseGraph.GenerateDense (1000);
 
 				DummyCorrectTests.Test (sparseGraph);
 				DummyCorrectTests.Test (denseGraph);
@@ -36,7 +36,8 @@ public class Run
 
 		/* evaluation */
 		int runsNo = 100;
-		int[] vNos = { 100, 500, 1000, 5000, 10000 };
+		//int[] vNos = {100, 500, 1000, 1750, 2500, 3750, 5000, 6250, 7500, 8750, 10000};
+		int[] vNos = {1000};
 
 		EvalResult[] results = new EvalResult[vNos.Length];
 
@@ -44,6 +45,7 @@ public class Run
 		{
 			results [i] = Evaluator.Eval (runsNo, vNos [i]);
 			Console.WriteLine (results [i]);
+			Console.WriteLine ("------------------------------");
 		}
 	}
 

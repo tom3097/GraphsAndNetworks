@@ -50,10 +50,14 @@ namespace MST
 				denseGraph_1.GenerateDense (vNo);
 				Graph denseGraph_2 = (Graph)denseGraph_1.Clone ();
 
+				GC.Collect ();
+				GC.WaitForPendingFinalizers ();
 				var startBoruvka = DateTime.Now;
 				BoruvkaMST.FindMST (denseGraph_1);
 				var endBoruvka = DateTime.Now;
 
+				GC.Collect ();
+				GC.WaitForPendingFinalizers ();
 				var startKruskal = DateTime.Now;
 				KruskalMST.FindMST (denseGraph_2);
 				var endKruskal = DateTime.Now;
