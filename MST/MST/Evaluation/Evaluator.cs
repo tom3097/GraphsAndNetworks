@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 
 namespace MST
@@ -22,6 +23,7 @@ namespace MST
 			var boruvkaDenseTimes = new TimeSpan[runsNo];
 			var kruskalDenseTimes = new TimeSpan[runsNo];
 
+			Stopwatch stopWatch = Stopwatch.StartNew();
 			for (int i = 0; i < runsNo; ++i)
 			{
 				Graph sparseGraph_1 = new Graph ();
@@ -30,18 +32,21 @@ namespace MST
 
 				GC.Collect ();
 				GC.WaitForPendingFinalizers ();
-				var startBoruvka = DateTime.Now;
+				stopWatch.Start();
 				BoruvkaMST.FindMST (sparseGraph_1);
-				var endBoruvka = DateTime.Now;
-
+				stopWatch.Stop();
+				
+				boruvkaSparseTimes[i] = stopWatch.Elapsed;
+				stopWatch.Reset();	
+				
 				GC.Collect ();
 				GC.WaitForPendingFinalizers ();
-				var startKruskal = DateTime.Now;
+				stopWatch.Start();
 				KruskalMST.FindMST (sparseGraph_2);
-				var endKruskal = DateTime.Now;
-
-				boruvkaSparseTimes[i] = endBoruvka - startBoruvka;
-				kruskalSparseTimes[i] = endKruskal - startKruskal;
+				stopWatch.Stop();
+				
+				kruskalSparseTimes[i] = stopWatch.Elapsed;
+				stopWatch.Reset();
 			}
 
 			for (int i = 0; i < runsNo; ++i)
@@ -52,18 +57,21 @@ namespace MST
 
 				GC.Collect ();
 				GC.WaitForPendingFinalizers ();
-				var startBoruvka = DateTime.Now;
+				stopWatch.Start();
 				BoruvkaMST.FindMST (denseGraph_1);
-				var endBoruvka = DateTime.Now;
-
+				stopWatch.Stop();
+				
+				boruvkaDenseTimes[i] = stopWatch.Elapsed;
+				stopWatch.Reset();
+				
 				GC.Collect ();
 				GC.WaitForPendingFinalizers ();
-				var startKruskal = DateTime.Now;
+				stopWatch.Start();
 				KruskalMST.FindMST (denseGraph_2);
-				var endKruskal = DateTime.Now;
+				stopWatch.Stop();
 
-				boruvkaDenseTimes[i] = endBoruvka - startBoruvka;
-				kruskalDenseTimes[i] = endKruskal - startKruskal;
+				kruskalDenseTimes[i] = stopWatch.Elapsed;
+				stopWatch.Reset();
 			}
 
 			var boruvkaSparseAverage = new TimeSpan ((long) boruvkaSparseTimes.Select

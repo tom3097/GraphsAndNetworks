@@ -36,8 +36,7 @@ public class Run
 
 		/* evaluation */
 		int runsNo = 100;
-		//int[] vNos = {100, 500, 1000, 1750, 2500, 3750, 5000, 6250, 7500, 8750, 10000};
-		int[] vNos = {1000};
+		int[] vNos = {100, 500, 1000, 1750, 2500, 3750, 5000, 6250, 7500, 8750, 10000};
 
 		EvalResult[] results = new EvalResult[vNos.Length];
 
